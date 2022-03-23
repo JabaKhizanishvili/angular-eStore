@@ -1,0 +1,146 @@
+<!-- carousel start -->
+<div class="container-fluid">
+
+  <div class="row">
+
+    <ngb-carousel *ngIf="images" class="col-md-8">
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img [src]="images[4]" alt="Random first slide">
+        </div>
+
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img [src]="images[6]" alt="Random second slide">
+        </div>
+
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img [src]="images[5]" alt="Random third slide">
+        </div>
+
+      </ng-template>
+    </ngb-carousel>
+
+    <div class="container col-md-3 d-grid">
+      <div class="card navcard">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+      <div class="card navcard">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- carousel end -->
+
+
+</div>
+
+
+<!-- owl carousel -->
+<div class="container-fluid mt-5">
+  <h2 class="shadow p-3 mb-5 bg-body rounded">SALE ends in <countdown [config]="{ leftTime: 9000 }" class="text-danger">
+    </countdown>
+  </h2>
+
+
+  <owl-carousel-o [options]="customOptions">
+    <ng-template carouselSlide>
+      <img class="p-5"
+        src="https://cdn1.it4profit.com/AfrOrF3gWeDA6VOlDG4TzxMv39O7MXnF4CXpKUwGqRM/resize:fill:540/bg:f6f6f6/q:100/plain/s3://catalog-products/201111082128206860/201210170015170447.png@webp"
+        alt="as">
+    </ng-template>
+    <ng-template carouselSlide>
+      <img class="p-3"
+        src="https://images.stockx.com/images/Sony-PS5-Playstation-5-Blu-Ray-Edition-Console-White-V5.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&q=90&dpr=2&trim=color&updated_at=1642201363"
+        alt="as">
+    </ng-template>
+    <ng-template carouselSlide>
+      <img class="p-5"
+        src="https://ict.cloudnine.shopping/images/detailed/8/iphone-12-pro-max-graphite-hero_2h6k-um.png" alt="as">
+    </ng-template>
+    <ng-template carouselSlide>
+      <img class="p-5"
+        src="https://cdn1.it4profit.com/AfrOrF3gWeDA6VOlDG4TzxMv39O7MXnF4CXpKUwGqRM/resize:fill:540/bg:f6f6f6/q:100/plain/s3://catalog-products/201111082128206860/201210170015170447.png@webp"
+        alt="as">
+    </ng-template>
+    <ng-template carouselSlide>
+      <img class="p-3"
+        src="https://images.stockx.com/images/Sony-PS5-Playstation-5-Blu-Ray-Edition-Console-White-V5.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&q=90&dpr=2&trim=color&updated_at=1642201363"
+        alt="as">
+    </ng-template>
+    <ng-template carouselSlide>
+      <img class="p-5"
+        src="https://ict.cloudnine.shopping/images/detailed/8/iphone-12-pro-max-graphite-hero_2h6k-um.png" alt="as">
+    </ng-template>
+  </owl-carousel-o>
+</div>
+
+
+
+
+<div class="container-fluid mt-5 mb-5">
+  <div class="row d-flex justify-content-around">
+    <div class="col-md-2">
+      <div class="container">
+        <h2>search</h2>
+        <input type="text" #filterPost [formControl]="search" (input)="searchPost(filterPost.value)"
+          class="form-control">
+        <h2>price filter</h2>
+        <ngx-slider #rangeVal [(value)]="minValue" [(highValue)]="maxValue" [options]="options"
+          (click)="priceFilter(minValue, maxValue)">
+        </ngx-slider>
+        <form class="mt-4">
+          <mat-radio-group aria-label=" Select an option" class="d-grid">
+            <mat-radio-button value="phone" (change)="onSubmit($event)">phone</mat-radio-button>
+            <mat-radio-button value="laptop" (change)="onSubmit($event)">laptop</mat-radio-button>
+            <mat-radio-button value="console" (change)="onSubmit($event)">console</mat-radio-button>
+            <mat-radio-button value="cpu" (change)="onSubmit($event)">cpu</mat-radio-button>
+            <mat-radio-button value="gpu" (change)="onSubmit($event)">gpu</mat-radio-button>
+            <mat-radio-button value="headset" (change)="onSubmit($event)">headset</mat-radio-button>
+          </mat-radio-group>
+        </form>
+      </div>
+    </div>
+
+    <div class="col-md-9">
+      <div class="row row-cols-md-4">
+        <div class="card " *ngFor="let item of filteredProducts">
+          <div class="row prod-img">
+            <img [src]="item.img" class="card-img-top p-5" alt="...">
+            <span class="discount" *ngIf="item.sale">{{item.sale}}%</span>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{item.title}}</h5>
+            <div class="container d-flex">
+              <!-- <p class="card-text">{{item.price}} ლარი</p> -->
+              <div *ngIf="item.sale as value; else elseBlock"> <span
+                  [ngStyle]="{'text-decoration': 'line-through'}">{{item.price}}</span> ახალი ფასი{{item.price *
+                (100-value)/100}}
+              </div>
+              <ng-template #elseBlock>
+                <p>{{item.price}} ლარი</p>
+              </ng-template>
+            </div>
+            <ngb-rating class="text-danger jaba" [rate]='item.rate'></ngb-rating>
+            <a class="btn btn-primary mt-3" [routerLink]="['/products/' + item.id]">დეტალურად</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

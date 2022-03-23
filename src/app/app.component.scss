@@ -1,0 +1,89 @@
+.Mainloader {
+  @import 'loader';
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: #333333;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.Mainloader.hidden {
+  visibility: hidden;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@600&family=Rowdies:wght@400;700&display=swap');
+
+* {
+  font-family: 'Noto Sans Georgian', sans-serif;
+  font-family: 'Rowdies', cursive;
+}
+
+
+#scrolltop {
+  visibility: hidden;
+  position: fixed;
+  bottom: 2%;
+  right: 3%;
+  z-index: 100000000;
+  cursor: pointer;
+  pointer-events: none;
+  padding: 10px;
+  animation: jump 0.7s infinite alternate, pulse 0.9s infinite alternate;
+}
+
+#scrolltop.active {
+  visibility: visible;
+  transition: 0.5s ease-in-out;
+  pointer-events: all;
+  bottom: 4%;
+}
+
+@-webkit-keyframes jump {
+  from {
+    transform: translateY(0px);
+  }
+
+  to {
+    transform: translateY(20px);
+  }
+}
+
+@keyframes jump {
+  from {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+
+  to {
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    text-shadow: 0 0 20px #FF0000, 0 0 20px #0000FF;
+  }
+
+  25% {
+    text-shadow: 0 0 20px #e01083;
+  }
+
+  50% {
+    text-shadow: 0 0 20px #0000FF;
+  }
+
+  70% {
+    text-shadow: 0px 0px 20px #1b09b9;
+  }
+
+  100% {
+    text-shadow: 0px 0px 20px #17ffec;
+  }
+}

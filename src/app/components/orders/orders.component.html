@@ -1,0 +1,21 @@
+<div class="container my-5">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col"># Product ID</th>
+        <th scope="col">quantity</th>
+        <th scope="col">price</th>
+        <th scope="col">del</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of data">
+        <td>{{item.id}}</td>
+        <td>{{item.quantity}}</td>
+        <td>{{item.price}}</td>
+        <td><i class="fas fa-times text-danger fa-2x" [ngStyle]="{'cursor': 'pointer'}" (click)="jaba(item.id)"></i>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,35 @@
+.picsum-img-wrapper {
+
+  img {
+    width: 100%;
+    height: 400px;
+  }
+}
+
+
+.navcard {
+  background-image: url('https://images.macrumors.com/t/3q1wCX8q2ny5ej3QuD9ERZJsWDA=/800x0/smart/article-new/2019/10/iphone12-lineup-wide.jpg?lossy');
+}
+
+.prod-img {
+
+  position: relative;
+  overflow: hidden;
+
+  .discount {
+    position: absolute;
+    padding: 10px;
+    color: rgb(254, 254, 254);
+    background-color: rgb(255, 202, 0);
+    width: 100%;
+    transform: rotate(35deg) translate(60px, -20px);
+    top: 0;
+    right: 0;
+    text-align: center;
+  }
+
+}
+
+.jaba {
+  font-size: 20px;
+}

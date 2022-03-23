@@ -1,0 +1,18 @@
+.prod-img {
+
+  position: relative;
+  overflow: hidden;
+
+  .discount {
+    position: absolute;
+    padding: 10px;
+    color: rgb(254, 254, 254);
+    background-color: rgb(255, 202, 0);
+    width: 100%;
+    transform: rotate(35deg) translate(60px, -20px);
+    top: 0;
+    right: 0;
+    text-align: center;
+  }
+
+}

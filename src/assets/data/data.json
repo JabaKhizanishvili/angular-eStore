@@ -1,0 +1,74 @@
+[
+  {
+    "id": 0,
+    "title" : "iphone",
+    "price" : 2500,
+    "sale" : 20,
+    "img" : "https://ict.cloudnine.shopping/images/detailed/8/iphone-12-pro-max-graphite-hero_2h6k-um.png",
+    "cat" : "phone",
+    "rate" : 4
+  },
+  {
+    "id": 1,
+    "title" : "samsung",
+    "price" : 1600,
+    "sale" : 30,
+    "img" : "https://www.mytrendyphone.eu/images/Samsung-Galaxy-S21-5G-128GB-Phantom-Grey-8806090892776-18012021-01-p.jpg",
+    "cat" : "phone",
+    "rate" : 5
+  },
+  {
+    "id": 2,
+    "title" : "google pxl",
+    "price" : 1000,
+    "sale":false,
+    "img" : "https://fdn2.mobgsm.com/vv/pics/google/google-pixel-6-pro-1.jpg",
+    "cat" : "phone",
+    "rate" : 7
+  },
+  {
+    "id": 3,
+    "title" : "Macbook Pro",
+    "price" : 3999,
+    "sale":false,
+    "img" : "https://www.notebookcheck.net/fileadmin/Notebooks/Apple/MacBook_Pro_14_2021_M1_Pro_Entry/MacBook_Pro_14.jpg",
+    "cat" : "laptop",
+    "rate" : 4
+  },
+  {
+    "id": 4,
+    "title" : "Playstation 5",
+    "price" : 2500,
+    "sale":false,
+    "img" : "https://images.stockx.com/images/Sony-PS5-Playstation-5-Blu-Ray-Edition-Console-White-V5.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&q=90&dpr=2&trim=color&updated_at=1642201363",
+    "cat" : "console",
+    "rate" : 10
+  },
+  {
+    "id": 5,
+    "title" : "i9 11900k",
+    "price" : 4500,
+    "sale":false,
+    "img" : "https://www.powerplanetonline.com/cdnassets/procesador_intel_core_i9-10900_2_8_ghz_box_01_l.jpg",
+    "cat" : "cpu",
+    "rate" : 9
+  },
+  {
+    "id": 6,
+    "title" : "rtx 3090ti",
+    "price" : 8000,
+    "sale":false,
+    "img" : "https://m.media-amazon.com/images/I/91XyrUFYKfL._AC_SL1500_.jpg",
+    "cat" : "gpu",
+    "rate" : 5
+  },
+  {
+    "id": 7,
+    "title" : "Marshall Major IV Bluetooth Black",
+    "price" : 400,
+    "sale":10,
+    "img" : "https://img.zoommer.ge/zoommer-images/thumbs/0153825_marshall-major-iv-bluetooth-black_550.jpeg",
+    "cat" : "headset",
+    "rate" : 2
+  }
+]

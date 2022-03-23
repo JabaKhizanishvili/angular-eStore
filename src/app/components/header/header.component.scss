@@ -1,0 +1,65 @@
+.resposiveToggler {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+
+
+  .right,
+  .mid {
+    display: none !important;
+    // visibility: hidden;
+  }
+
+  .responsive {
+    width: 100%;
+    display: inline-flex !important;
+  }
+
+  .resposiveToggler {
+    display: block;
+  }
+}
+
+.search {
+
+  position: relative !important;
+  max-width: 1000px;
+
+  input {
+    height: 40px;
+    width: 100%;
+    border-radius: 40px;
+    border: 2px solid #0d6efd;
+    outline: none;
+  }
+
+  i {
+    position: absolute;
+    right: 10px;
+    top: 30%
+  }
+}
+
+.orders {
+  position: relative !important;
+  cursor: pointer;
+
+  span {
+    color: red;
+    padding: 2px 9px;
+    background-color: rgb(132, 178, 191);
+    border-radius: 50%;
+    position: absolute;
+    top: -15px;
+    left: 30px;
+  }
+
+  .addtocard {
+    color: rgb(151, 196, 235);
+
+
+
+  }
+
+}

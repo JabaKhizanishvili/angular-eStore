@@ -1,0 +1,65 @@
+<div class="container-fluid bg-light p-3 sticky-top ">
+  <div class="navbar">
+    <a href="#">
+      <div class="logo d-flex justify-content-center align-items-center">
+        <i class="fab fa-shopify fa-3x"></i>
+        Eshop
+      </div>
+    </a>
+
+    <div class="mid d-flex w-50 justify-content-between color-primary " [ngClass]="{responsive: responsive}">
+      <div ngbDropdown class="d-inline-block">
+        <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
+          <i class="fas fa-map-marker-alt"></i>
+          Location</button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button ngbDropdownItem>Action - 1</button>
+          <button ngbDropdownItem>Another Action</button>
+          <button ngbDropdownItem>Something else is here</button>
+        </div>
+      </div>
+
+      <div ngbDropdown class="d-inline-block">
+        <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
+          All Categories</button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button ngbDropdownItem>Action - 1</button>
+          <button ngbDropdownItem>Another Action</button>
+          <button ngbDropdownItem>Something else is here</button>
+        </div>
+      </div>
+
+      <div class="search">
+        <input type="text" class="px-4">
+        <i class="fas fa-search"></i>
+      </div>
+
+    </div>
+
+
+    <div class="right d-flex">
+      <a [routerLink]="['/login']" *ngIf="isLogged">Log In</a>
+
+      <div class="container" *ngIf="!isLogged">
+        <div ngbDropdown class="d-inline-block">
+          <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
+            <i class="fas fa-user-circle"></i>
+          </button>
+          <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="dropdown-menu-end">
+            <button ngbDropdownItem>{{jabaData.username}}</button>
+            <button ngbDropdownItem (click)="logOut()">Log Out</button>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="!isLogged" class="container d-flex justify-content-center align-items-center">
+        <div class="orders" (click)="goToOrders()">
+          <span>{{count}}</span>
+          <i class="fas fa-cart-plus fa-2x addtocard"></i>
+        </div>
+      </div>
+    </div>
+
+
+    <i class="resposiveToggler fas fa-bars fa-2x" (click)="jaba()"></i>
+  </div>
+</div>

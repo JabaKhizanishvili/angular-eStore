@@ -1,0 +1,30 @@
+<div class="container mt-5 d-flex justify-content-around" *ngFor="let item of filteredProducts">
+  <div class="card" style="width: 18rem;">
+    <div class="row prod-img">
+      <img [src]="item.img" class="card-img-top p-5" alt="...">
+      <span class="discount" *ngIf="item.sale">{{item.sale}}%</span>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{item.title}}</h5>
+      <div *ngIf="item.sale as value; else elseBlock"> <span
+          [ngStyle]="{'text-decoration': 'line-through'}">{{item.price}}</span> ახალი ფასი{{(item.price *
+        (100-value)/100) * quantity}}
+      </div>
+      <ng-template #elseBlock>
+        <p>{{item.price * quantity}} ლარი</p>
+      </ng-template>
+
+      <div class="container my-2 d-flex justify-content-between align-items-center" *ngIf="isLogged">
+        <div>
+          Quantity:
+          <button class="btn btn-primary" (click)="add('+')">+</button>
+          <button class="btn btn-primary" (click)="add('-')">-</button>
+        </div>
+        <span class="">N : {{quantity}}</span>
+      </div>
+      <a class="btn btn-primary" routerLink="">უკან</a>
+      <a class="btn btn-primary" *ngIf="isLogged"
+        (click)="addcart([{price: item.price, quantity: quantity,id:item.id}])">ყიდვა</a>
+    </div>
+  </div>
+</div>
